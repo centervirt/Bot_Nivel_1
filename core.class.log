@@ -1,0 +1,228 @@
+[handleMsg]:  {
+  key: {
+    remoteJid: '5492634529314@s.whatsapp.net',
+    fromMe: false,
+    id: '27EE1508E0E646A864',
+    participant: undefined
+  },
+  messageTimestamp: 1712417359,
+  pushName: 'Canal de Atencion',
+  broadcast: false,
+  message: Message {
+    extendedTextMessage: ExtendedTextMessage { text: 'UBNT', contextInfo: [ContextInfo] },
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'UBNT',
+  from: '5492634529314'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_1acbb662-ce07-4f99-9bdb-1e0bcddd3aa8',
+  keyword: 'key_9590fb41-12c3-4938-bbbe-21a359272f9b',
+  answer: '🙌 Hola Gracias por comunicarte con  *Intertel Comunicaciones*',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: '5eb0d1cb95994c8714ae7ea4c6ca43a6'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_779acb43-c858-46c1-bc43-98f6af5ae52b',
+  keyword: 'ans_1acbb662-ce07-4f99-9bdb-1e0bcddd3aa8',
+  answer: 'Escribe un *EL NUMERO*  de la opcion deseada:',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: '3b5883e4ba8e0b6b31786a8d4273405e'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_e0e15b16-515d-4d55-9a1c-2b88fcd07b01',
+  keyword: 'ans_779acb43-c858-46c1-bc43-98f6af5ae52b',
+  answer: '1️⃣*QUIERO INFORMACION*\n2️⃣*SOY CLIENTE* \n3️⃣*ENVIO DE COMPROBANTES*',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object]
+    ],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: '0c86fdc6152cff9b04a2426900bd49c8'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5492634529314@s.whatsapp.net',
+    fromMe: false,
+    id: '406C9AAA424C41E323',
+    participant: undefined
+  },
+  messageTimestamp: 1712417363,
+  pushName: 'Canal de Atencion',
+  broadcast: false,
+  message: Message {
+    extendedTextMessage: ExtendedTextMessage { text: '1', contextInfo: [ContextInfo] },
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: '1',
+  from: '5492634529314'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_e679dc4c-8c0e-44e6-b20a-8d27baef9fc2',
+  keyword: 'key_7ad0eec5-3ee9-41f4-a234-7f3a886148a7',
+  answer: '1️⃣ Costo de conexion y planes\n' +
+    '2️⃣ Hablar con un asesor\n' +
+    '3️⃣ Solicitar Servicio ',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [ [Object], [Object], [Object], [Object] ],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: 'e1d46a05f52b058528bb72918efcf764'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5492634529314@s.whatsapp.net',
+    fromMe: false,
+    id: '93FDD0ACDC540433E0',
+    participant: undefined
+  },
+  messageTimestamp: 1712417365,
+  pushName: 'Canal de Atencion',
+  broadcast: false,
+  message: Message {
+    extendedTextMessage: ExtendedTextMessage { text: '1', contextInfo: [ContextInfo] },
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: '1',
+  from: '5492634529314'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_96877b68-076d-425a-be10-a948be22c501',
+  keyword: 'key_4be8d403-eab5-4d9f-983e-7bdd4e880473',
+  answer: '🖥 Tenemos diferentes planes de servicio:\n' +
+    '👉 PLAN_BASICO - Conexion recomendada para 3 dispositivos simultaneos - $8000\n' +
+    '\n' +
+    ' 👉 PLAN_PREMIUM - Recomendado para 5 dispositivos simultaneos - $10000\n' +
+    '\n' +
+    ' 👉 PLAN_FULL - Velocidad de hasta 15 Megas Simetricos- Compartido - $12000\n' +
+    '\n' +
+    ' 👉 PLAN_FTTC_BASICO - Conexion recomendada para 5 dispositivos simultaneos - $9000\n' +
+    '\n' +
+    ' 👉 PLAN_FTTC_PREMIUM - Conexion recomendada para MULTIPLES dispositivos  - $11000\n' +
+    '\n' +
+    ' 👉 PLAN_FTTC_FULL - Conexion de hasta 20 Megas Simetricos - Compartidos - $13000',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: '3de7035380e1385b5261b579242c0476'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_0c02255d-86f2-43e1-bd92-f668d686b2a6',
+  keyword: 'ans_96877b68-076d-425a-be10-a948be22c501',
+  answer: '🧿 *IMPORTANTE*\n' +
+    'Para corroborar la disponibilidad del servicio debe enviarnos las coordenadas de Google Maps al Whatsapp, solicitar hablar con un asesor\n' +
+    'Se incluye acceso a Portal de Cliente',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: '59137f50747faa6495415a88c84fe0dc'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_c882aed9-217c-4077-bcf3-a570811706a5',
+  keyword: 'ans_0c02255d-86f2-43e1-bd92-f668d686b2a6',
+  answer: '💪 Para continuar *escribe* el numero de la opcion que corresponda\n' +
+    '0️⃣Volver al menu anterior',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: 'cfc367d185a7db069bb71c626e0e4125'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5492634529314@s.whatsapp.net',
+    fromMe: false,
+    id: '4EB93987AD0DFDE407',
+    participant: undefined
+  },
+  messageTimestamp: 1712417370,
+  pushName: 'Canal de Atencion',
+  broadcast: false,
+  message: Message {
+    extendedTextMessage: ExtendedTextMessage { text: '0', contextInfo: [ContextInfo] },
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: '0',
+  from: '5492634529314'
+}
