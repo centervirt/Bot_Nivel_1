@@ -26,7 +26,17 @@ const flowCostos = addKeyword('1')
                 ])
         .addAnswer ('Para continuar *esbriba el numero* de la opcion que necesita')
         .addAnswer('1️⃣ *Portal de Cliente*')
-        .addAnswer('0️⃣ *Volver al menu anterior*')
+        .addAnswer('0️⃣ *Volver al menu anterior*',
+
+                        {capture: true},
+                        async (ctx, {gotoFlow}) => {
+                            const body = ctx.body;
+                            if (body === "0") 
+                            return gotoFlow(flowComienzo)
+                    }
+                         )
+
+        
 
 /////////////////////////////////// FLUJO DE ASESOR ///////////////////////////////////////////////////
 
