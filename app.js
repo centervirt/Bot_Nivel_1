@@ -47,6 +47,7 @@ const flowCostos = addKeyword('1')
 
         .addAnswer('🧿 *IMPORTANTE*',
                     'Para corroborar la disponibilidad del servicio debe enviarnos las coordenadas de Google Maps al Whatsapp, solicitar hablar con un asesor',
+<<<<<<< HEAD
                     
                  )
                  .addAnswer ('Para continuar *esbriba el numero* de la opcion que necesita')
@@ -60,6 +61,23 @@ const flowCostos = addKeyword('1')
                                      return gotoFlow(flowInformacion)
                              }
                                   )
+=======
+                    'Se incluye acceso a Portal de Cliente',
+                ])
+        .addAnswer ('Para continuar *esbriba el numero* de la opcion que necesita')
+        .addAnswer('1️⃣ *Portal de Cliente*')
+        .addAnswer('0️⃣ *Volver al menu anterior*',
+
+                        {capture: true},
+                        async (ctx, {gotoFlow}) => {
+                            const body = ctx.body;
+                            if (body === "0") 
+                            return gotoFlow(flowComienzo)
+                    }
+                         )
+
+        
+>>>>>>> d7341b1eeadb597b1f6f41a1faf56121c41c9bde
 
 /////////////////////////////////// FLUJO DE ASESOR ///////////////////////////////////////////////////
 
