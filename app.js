@@ -45,47 +45,35 @@ const flowCostos = addKeyword('1')
         .addAnswer('💰 Costo de la instalacion $90.000')
         .addAnswer('*INCLUYE EN COMODATO*')
 
-        .addAnswer('🧿 *IMPORTANTE*',
-                    'Para corroborar la disponibilidad del servicio debe enviarnos las coordenadas de Google Maps al Whatsapp, solicitar hablar con un asesor',
-<<<<<<< HEAD
-                    
-                 )
+        .addAnswer('🧿 *IMPORTANTE*')
+        .addAnswer('Para corroborar la disponibilidad del servicio debe enviarnos las coordenadas de Google Maps al Whatsapp, solicitar hablar con un asesor')
                  .addAnswer ('Para continuar *esbriba el numero* de la opcion que necesita')
                 // .addAnswer('1️⃣ *Portal de Cliente*')
-                 .addAnswer('0️⃣ *Volver al menu anterior*',
-         
-                                 {capture: true},
-                                 async (ctx, {gotoFlow}) => {
-                                     const body = ctx.body;
-                                     if (body === "0") 
-                                     return gotoFlow(flowInformacion)
-                             }
-                                  )
-=======
-                    'Se incluye acceso a Portal de Cliente',
-                ])
-        .addAnswer ('Para continuar *esbriba el numero* de la opcion que necesita')
-        .addAnswer('1️⃣ *Portal de Cliente*')
         .addAnswer('0️⃣ *Volver al menu anterior*',
 
                         {capture: true},
                         async (ctx, {gotoFlow}) => {
                             const body = ctx.body;
                             if (body === "0") 
-                            return gotoFlow(flowComienzo)
+                            return gotoFlow(flowInformacion)
                     }
-                         )
-
-        
->>>>>>> d7341b1eeadb597b1f6f41a1faf56121c41c9bde
+                        )
 
 /////////////////////////////////// FLUJO DE ASESOR ///////////////////////////////////////////////////
 
 const flowAsesor = addKeyword('2')
 
-.addAnswer('🤖 Un asesor técnico se pondrá en contacto con ud dentro de nuestros horarios de atención: lunes a viernes 9Hs a 19hs. Muchas Gracias')
+.addAnswer('🤖 Un asesor técnico se pondrá en contacto con ud dentro de nuestros horarios de atención: lunes a viernes 9Hs a 17hs. Muchas Gracias')
 
-.addAnswer('0️⃣ *Volver al menu anterior*')
+.addAnswer('0️⃣ *Volver al menu anterior*',
+
+                        {capture: true},
+                        async (ctx, {gotoFlow}) => {
+                            const body = ctx.body;
+                            if (body === "0") 
+                            return gotoFlow(flowInformacion)
+                    }
+                        )
 
 
 ////////////////////////////// FLUJO PARA SOLICITAR EL SERVICIO ////////////////////////////////////
@@ -183,54 +171,9 @@ const flowCliente = addKeyword('2')
 */
 //const axios = require('axios'); // Asegúrate de tener Axios instalado en tu proyecto
 
-const menuAPI = async () => {
-    const config = {
-        method: 'get',
-        url: 'https://intertel.online/api/v1/GetClientsDetails',
-        headers: {
-            'Authorization': `Bearer ${process.env.MIKRO_API}`
-        }
-    };
-    try {
-        const response = await axios(config);
-        const { data } = response;
-        
-        // Comprueba si data es un array
-        if (Array.isArray(data)) {
-            // Si es un array, mapea los elementos y retorna el resultado
-            return data.map(m =>
-                ({
-                    body: `*DNI: ${m.attributes.cedula}*\nTeléfono: ${m.attributes.telefono}`
-                }));
-        } else {
-            // Si no es un array, retorna un mensaje indicando que la estructura no es válida
-            return [{ body: 'La estructura de datos no es válida.' }];
-        }
-    } catch (error) {
-        console.error('Error al obtener datos del cliente:', error);
-        throw error; // Lanza el error para que sea manejado externamente
-    }
-};
 
 const flowCliente = addKeyword('2')
-    .addAction(async (_, { flowDynamic }) => {
-        return flowDynamic('➡ Ingrese el DNI del titular *SIN PUNTO, NI ESPACIOS* ...');
-    })
-    .addAction({ capture: true }, async (ctx, { flowDynamic, state }) => {
-        const dni = ctx.body.trim().replace(/\./g, ''); // Elimina puntos del DNI
-        try {
-            const data = await menuAPI(); // Obtén los detalles del cliente utilizando la función menuAPI
-            const clientDetails = data.find(item => item.body.includes(`*DNI: ${cedula}:`)); // Encuentra los detalles del cliente correspondientes al DNI ingresado
-            if (clientDetails) {
-                return flowDynamic(clientDetails.body);
-            } else {
-                return flowDynamic('No se encontraron detalles para el DNI proporcionado.');
-            }
-        } catch (error) {
-            console.error('Error al obtener datos del cliente:', error);
-            return flowDynamic('En este momento la conexión con la base de datos no está disponible 🔴. Inténtelo más tarde. Gracias');
-        }
-    });
+    .addAnswer('Este  es el flow de cliente ')
 
 
 
@@ -243,7 +186,7 @@ const flowComprobante = addKeyword('3')
 const flowInformacion = addKeyword('1')
         .addAnswer(['1️⃣ *Costo de conexion y planes*',
                     '2️⃣ *Hablar con un asesor*',
-                    '3️⃣ *Costo de conexion y planes*',
+                    '3️⃣ *Solicitar Servicio*',
                     '0️⃣ *Volver Al Menu Principal*',
         ],
       
@@ -254,7 +197,7 @@ const flowInformacion = addKeyword('1')
         },
 
          
-            [flowCostos, flowSolicitarServicio, flowAsesor]
+            [flowCostos, flowAsesor, flowSolicitarServicio]
         )
        // .addAnswer('0️⃣ *Volver Al Menu Principal*')
 
