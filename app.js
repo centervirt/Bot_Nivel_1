@@ -1,5 +1,6 @@
-require('dotenv').config()
 const axios = require('axios')
+require('dotenv').config()
+
 const { EVENTS } = require('@bot-whatsapp/bot')
 
 const { createBot, createProvider, createFlow, addKeyword, addAnswer } = require('@bot-whatsapp/bot')
@@ -8,28 +9,6 @@ const QRPortalWeb = require('@bot-whatsapp/portal')
 const BaileysProvider = require('@bot-whatsapp/provider/baileys')
 const MockAdapter = require('@bot-whatsapp/database/mock')
 
-/**
- * 
- * 
- * 
- * 
- 
-const menuAPI = async () => {
-    const config = {
-        method: 'get',
-        url: 'https://intertel.online/api/v1/GetClientsDetails',
-        headers: {
-            'Authorization': `Bearer ${process.env.MIKRO_API}`
-        }
-    };
-    const {data} = await axios(config).then((i) => i.data)
-    return data.map(m =>
-    ({
-        body:[`*DNI: ${m.attibutes.cedula}:*Telefono: ${m.attributtes.telefono}`].join('\n')
-    }))
-}
-
-*/
 
 /////////// FLUJOS DE COSTOS - OK ///////////////
 const flowCostos = addKeyword('1')
@@ -46,9 +25,9 @@ const flowCostos = addKeyword('1')
         .addAnswer('*INCLUYE EN COMODATO*')
 
         .addAnswer('🧿 *IMPORTANTE*')
-        .addAnswer('Para corroborar la disponibilidad del servicio debe enviarnos las coordenadas de Google Maps al Whatsapp, solicitar hablar con un asesor')
-                 .addAnswer ('Para continuar *esbriba el numero* de la opcion que necesita')
-                // .addAnswer('1️⃣ *Portal de Cliente*')
+        .addAnswer('Para verificar la disponibilidad del servicio debe enviarnos las coordenadas de Google Maps al Whatsapp, solicitar hablar con un asesor')
+        .addAnswer ('Para continuar *esbriba el numero* de la opcion que necesita')
+                
         .addAnswer('0️⃣ *Volver al menu anterior*',
 
                         {capture: true},
@@ -81,11 +60,19 @@ const flowAsesor = addKeyword('2')
 const flowSolicitarServicio = addKeyword('3')
 
 .addAnswer('*Solicitar nuevo servicio*')
-.addAnswer(' Pediremos tus datos y daremos de alta tu cuenta de cliente')
-.addAnswer(' Cuando la cuenta este dada de alta te va a llegar un mensaje de bienvenida, y después un segundo mensaje confirmando día y hora de la instalación. Los tiempos de instalación son entre 24hs y 72hs. Muchas gracias!')
+.addAnswer(' Pediremos tus datos para dar de alta la solicitud de servicio')
+//.addAnswer(' Cuando la cuenta este dada de alta te va a llegar un mensaje de bienvenida, y después un segundo mensaje confirmando día y hora de la instalación. Los tiempos de instalación son entre 24hs y 72hs. Muchas gracias!')
 .addAnswer('0️⃣ *Para cancelar y ver el menu nuevamente*')
-.addAnswer('1️⃣ *Para continuar')
+.addAnswer('1️⃣ *Para continuar*',
 
+                            {capture: true},
+                            async (ctx, {gotoFlow}) => {
+                                const body = ctx.body;
+                                    if (body === "0") 
+                                        return gotoFlow(flowInformacion)
+                                    }
+                                    
+                                        )
 
 /////////////// FlUJO DE CLIENTE //////////////////////
 
@@ -95,88 +82,44 @@ const flowSolicitarServicio = addKeyword('3')
  * 
  * 
  
+
 const menuAPI = async () => {
     const config = {
         method: 'get',
-        url: 'https://intertel.online/api/v1/GetClientsDetails',
+        url: 'http://autogestion.ar/api/v1/GetRouters',
         headers: {
             'Authorization': `Bearer ${process.env.MIKRO_API}`
         }
     };
+
     const {data} = await axios(config).then((i) => i.data)
-    return data.map(m =>
-    ({
-        body:[`*DNI: ${m.attibutes.cedula}:*Telefono: ${m.attributtes.telefono}`].join('\n')
-    }))
+        return data.map(m => ({body:[ `*EQUIPOS:* ${m.id} - *NOMBRE:* ${m.nombre} - *IP:* ${m.ip}`].join('\n')}))
 }
 
-
-
+*/
 
 const flowCliente = addKeyword('2')
-    .addAction (async (_, { flowDynamic }) => {
-            return flowDynamic ('➡ Ingrese el DNI del titular *SIN PUNTO, NI ESPACIOS* ...')
-    })
+    .addAnswer('El estado del servicio es el siguiente:', null, async (ctx, {flowDynamic}) => {
+        const equipos = await menuAPI()
+       
+        flowDynamic(equipos)
 
-    .addAction({ capture: true }, async (ctx, { flowDynamic, state }) => {
-        await state.update({ cedula: ctx.body }); // Actualiza el estado con el DNI ingresado
-        const dni = ctx.body.trim().replace(/\./g, ''); // Elimina puntos del DNI
-        try {
-            const response = await axios.get(`https://intertel.online/api/v1/GetClientsDetails/${cedula}`); // Realiza la solicitud a la API con el DNI
-            const { nombre, estado } = response.data; // Extrae nombre y teléfono de la respuesta
-            await state.update({ nombre, estado }); // Actualiza el estado con nombre y teléfono
-            return flowDynamic(`Nombre: ${nombre}, Estado: ${estado}`);
-        } catch (error) {
-            console.error('Error al obtener datos del cliente:', error);
-            return flowDynamic('En este momento la conexión con la base de datos no está disponible 🔴. Inténtelo más tarde. Gracias');
-        }
-    })
-    .addAnswer('Tu datos de cliente son: ', null, async (ctx, { flowDynamic, state }) => {
-        // Accede al estado para obtener nombre y teléfono
-        const { nombre, telefono } = await state.load();
-        if (nombre && telefono) {
-            return flowDynamic(`Nombre: ${nombre}, Teléfono: ${telefono}`);
-        } else {
-            return flowDynamic('Los datos del cliente no están disponibles en este momento. Inténtelo más tarde.');
-        }
-    });
-
-    /*
-    .addAction({ capture: true }, async (ctx, { flowDynamic, state }) => {
-        await state.update({ name: ctx.body })
-        return flowDynamic(`Tu DNI es : ${ctx.body}`)
-    })
-    .addAnswer('En este momento la conexion con la base de datos no esta disponible 🔴. Intentelo mas tarde! Gracias', {
-        delay:1500,
-    })
-    .addAnswer('Tu datos de cliente son: ', null, async (ctx, {flowDynamic}) => {
-        const data = await menuAPI()
-        return flowDynamic(data);
-    }
-)
+})
+     
 
 
+  /* 
     .addAnswer('0️⃣ *Volver Al Menu Principal*',
-         
-                                 {capture: true},
-                                 async (ctx, {gotoFlow}) => {
-                                     const body = ctx.body;
-                                     if (body === "0") 
-                                     return gotoFlow(flowComienzo)
-                             })
-
     
-
+        { capture: true }, 
+        async (ctx, { gotoFlow }) => {
+            const body = ctx.body;
+            if (body === "0") return gotoFlow(flowComienzo);
+       
+        })
 
 */
-//const axios = require('axios'); // Asegúrate de tener Axios instalado en tu proyecto
-
-
-const flowCliente = addKeyword('2')
-    .addAnswer('Este  es el flow de cliente ')
-
-
-
+    
 const flowComprobante = addKeyword('3')
     .addAnswer('➡ Para enviar tu comprobante de pago lo podes hacer desde el *Portal de Cliente*')
     .addAnswer('¿Como puedo hacerlo ?, muy facil. Con tu  E-mail y contraseña que se envia al momento de realizar la instalacion de servicio te logueas en  ')
@@ -187,7 +130,7 @@ const flowInformacion = addKeyword('1')
         .addAnswer(['1️⃣ *Costo de conexion y planes*',
                     '2️⃣ *Hablar con un asesor*',
                     '3️⃣ *Solicitar Servicio*',
-                    '0️⃣ *Volver Al Menu Principal*',
+                    '0️⃣ *Volver Al Menu Principal*', 
         ],
       
         {capture:true},
@@ -199,31 +142,57 @@ const flowInformacion = addKeyword('1')
          
             [flowCostos, flowAsesor, flowSolicitarServicio]
         )
-       // .addAnswer('0️⃣ *Volver Al Menu Principal*')
+      
 
 
 const flowComienzo = addKeyword('UBNT', { sensitive: true })
-    .addAnswer('🙌 Hola gracias por comunicarte con  *Intertel Comunicaciones*')
-   // {capture:true},(ctx) => {
-     //   console.log('Inicio de Mensaje: ',ctx)
-  //  })
+    .addAnswer('🙌 Hola este es el menu de mi bot de *informacion* 🔢')
+    
     .addAnswer('Escribe un *EL NUMERO*  de la opcion deseada:')
     .addAnswer(
         [
             '1️⃣ *QUIERO INFORMACION*',
             '2️⃣ *SOY CLIENTE* ',
             '3️⃣ *ENVIO DE COMPROBANTE*',
+            '4️⃣ *AREA TECNICA*',
             '*Recorda escribir el número y darle enviar, mensajes de audio y fotos serán ignorados. Gracias!*'
            
-        ],null,null,[flowInformacion,flowCliente,flowComprobante]
-    )
+        ],null,null,[flowInformacion,flowCliente,flowComprobante])
+/*
+        {capture: true},
+        async (ctx, { gotoFlow, fallBack, flowDynamic }) => {
+            if (!["1","2","3","4"].includes(ctx.body)) {
+                return fallBack(
+                    "La respuesta no es valida, por favor seleccione una de la opciones."
+                
+                )}
+            
+            switch (ctx.body) {
+                case "1":
+                return await gotoFlow ("1");
+                case "2":
+                return await gotoFlow ("2");
+                case "3":
+                return await gotoFlow ("3");
+                case "4":
+                return await gotoFlow ("4");
+                case "0":
+                return await flowDynamic(
+                    "Saliendo ... Puedes volver a acceder al menu escribiendo *UBNT*"
+                )
+            }
+            
+            })
     
+   */ 
 
+const flowSaludo = addKeyword('Gracias')
+    .addAnswer('Gracias a vos .Saludos ')
 
 
 const main = async () => {
     const adapterDB = new MockAdapter()
-    const adapterFlow = createFlow([flowComienzo])
+    const adapterFlow = createFlow([flowComienzo],[flowSaludo])
     const adapterProvider = createProvider(BaileysProvider)
 
     createBot({
