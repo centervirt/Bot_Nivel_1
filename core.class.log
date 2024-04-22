@@ -2,43 +2,12 @@
   key: {
     remoteJid: '5492634529314@s.whatsapp.net',
     fromMe: false,
-    id: 'F4E0A395FD5C676992CE4FA89145FDBC',
+    id: '037075CFFFEAB4DE9D354BF18929927B',
     participant: undefined
   },
-  messageTimestamp: 1712638467,
+  messageTimestamp: 1712639243,
   pushName: 'Canal de Atencion',
   broadcast: false,
-  messageStubType: 2,
-  messageStubParameters: [ 'No matching sessions found for message' ],
-  body: undefined,
-  from: '5492634529314'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5492634529314@s.whatsapp.net',
-    fromMe: false,
-    id: 'F4E0A395FD5C676992CE4FA89145FDBC',
-    participant: undefined
-  },
-  messageTimestamp: 1712638467,
-  pushName: 'Canal de Atencion',
-  broadcast: false,
-  messageStubType: 2,
-  messageStubParameters: [ 'No matching sessions found for message' ],
-  body: undefined,
-  from: '5492634529314'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5492634529314@s.whatsapp.net',
-    fromMe: false,
-    id: 'F4E0A395FD5C676992CE4FA89145FDBC',
-    participant: undefined
-  },
-  messageTimestamp: 1712638468,
-  pushName: 'Canal de Atencion',
-  broadcast: false,
-  verifiedBizName: 'Servicio Técnico Nivel 3',
   message: Message {
     conversation: 'Ubnt',
     messageContextInfo: MessageContextInfo {
@@ -50,8 +19,8 @@
   from: '5492634529314'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_542ad33c-d75b-4294-accd-3de0d3b7c81a',
-  keyword: 'key_6ed70d70-b06e-44cc-aee4-93f692bc7230',
+  ref: 'ans_90b6967e-cd50-48d8-8fb1-d1feffede200',
+  keyword: 'key_ad905693-69e1-41d0-9c2f-ad6158a13d91',
   answer: '🙌 Hola gracias por comunicarte con  *Intertel Comunicaciones*',
   options: {
     media: null,
@@ -65,11 +34,11 @@
     keyword: {},
     callback: false
   },
-  refSerialize: 'ca11742ad960bebf0424e887f36cbadc'
+  refSerialize: 'e3c39524826a6686443836662a3ae37a'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_cdac1471-6e11-4959-9f0e-2671a87a4c45',
-  keyword: 'ans_542ad33c-d75b-4294-accd-3de0d3b7c81a',
+  ref: 'ans_39ce2b9a-85c3-4acd-a184-1f7b17387366',
+  keyword: 'ans_90b6967e-cd50-48d8-8fb1-d1feffede200',
   answer: 'Escribe un *EL NUMERO*  de la opcion deseada:',
   options: {
     media: null,
@@ -83,11 +52,11 @@
     keyword: {},
     callback: false
   },
-  refSerialize: '38cab4a9baee2fd9baf0e6d856a4b834'
+  refSerialize: 'cd66ae82fc5a633c45bc9a6005e4d7a3'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_d9e6f79a-ec3c-43f6-aa4e-119f863b45ca',
-  keyword: 'ans_cdac1471-6e11-4959-9f0e-2671a87a4c45',
+  ref: 'ans_e1a61c5f-cb21-4db7-bcff-9a0e89d3ae92',
+  keyword: 'ans_39ce2b9a-85c3-4acd-a184-1f7b17387366',
   answer: '1️⃣ *QUIERO INFORMACION*\n' +
     '2️⃣ *SOY CLIENTE* \n' +
     '3️⃣ *ENVIO DE COMPROBANTE*\n' +
@@ -104,16 +73,16 @@
     keyword: {},
     callback: false
   },
-  refSerialize: '9d1029c8f1bbce11062d63cd991968d8'
+  refSerialize: '54b1eb350cf8f03a199f1891edf6144f'
 }
 [handleMsg]:  {
   key: {
     remoteJid: '5492634529314@s.whatsapp.net',
     fromMe: false,
-    id: '5DC7FF1219C6F5A79B84838AE6C72115',
+    id: 'B1BD87F773517DA14FF68209C7679ED4',
     participant: undefined
   },
-  messageTimestamp: 1712638474,
+  messageTimestamp: 1712639248,
   pushName: 'Canal de Atencion',
   broadcast: false,
   message: Message {
@@ -127,8 +96,8 @@
   from: '5492634529314'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_503409bd-abda-4f68-a278-5c2ebba75050',
-  keyword: 'key_cbdcc4a4-18f1-4387-b369-c4e007504985',
+  ref: 'ans_461e0357-ef1a-4709-b114-863db838fede',
+  keyword: 'key_62317676-d134-4c54-9da2-7d131db5c2cc',
   answer: '1️⃣ *Costo de conexion y planes*\n' +
     '2️⃣ *Hablar con un asesor*\n' +
     '3️⃣ *Solicitar Servicio* \n' +
@@ -148,22 +117,21 @@
       [Object], [Object], [Object],
       [Object], [Object], [Object],
       [Object], [Object], [Object],
-      [Object], [Object], [Object],
-      [Object]
+      [Object], [Object], [Object]
     ],
     keyword: {},
     callback: false
   },
-  refSerialize: 'be4c1c8d3b904247cd4d81999a71edef'
+  refSerialize: 'd258229d8c43cb5da9ab71c106f90966'
 }
 [handleMsg]:  {
   key: {
     remoteJid: '5492634529314@s.whatsapp.net',
     fromMe: false,
-    id: '30A06FC1A7A4117195662EBF26570A99',
+    id: '550F7F14FC16E320FCD787837122D702',
     participant: undefined
   },
-  messageTimestamp: 1712638479,
+  messageTimestamp: 1712639252,
   pushName: 'Canal de Atencion',
   broadcast: false,
   message: Message {
@@ -177,8 +145,8 @@
   from: '5492634529314'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_32324f13-7f6b-4b47-bceb-45c189966ab4',
-  keyword: 'key_c11dd7e3-5acd-4229-b03c-f50630e8db69',
+  ref: 'ans_bf63bfec-6f5b-427e-9656-ed6729b5791d',
+  keyword: 'key_5a7ec0b5-238a-4155-9fbf-08bae72d748a',
   answer: '👉 *PLAN_BASICO* - Conexion recomendada para 3 dispositivos simultaneos - $8.000 x mes',
   options: {
     media: null,
@@ -192,11 +160,11 @@
     keyword: {},
     callback: false
   },
-  refSerialize: '1a71b86f6358073e57d5005d90942eef'
+  refSerialize: '6e265f1225357aa8bd82fd90ee58b04c'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_a5388150-4f52-4b00-842d-a63ff5276192',
-  keyword: 'ans_32324f13-7f6b-4b47-bceb-45c189966ab4',
+  ref: 'ans_6c0e74b5-7aaa-4023-8802-ab05f39f0b2a',
+  keyword: 'ans_bf63bfec-6f5b-427e-9656-ed6729b5791d',
   answer: '👉 *PLAN_PREMIUM* - Recomendado para 5 dispositivos simultaneos - $10.000',
   options: {
     media: null,
@@ -210,11 +178,11 @@
     keyword: {},
     callback: false
   },
-  refSerialize: '4c78abc33b77eb9cd9a1abcd10ab61a0'
+  refSerialize: '15fd7b1ab041e36cf401662a75d52b30'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_2a83e933-16dd-4abd-9927-54021c119151',
-  keyword: 'ans_a5388150-4f52-4b00-842d-a63ff5276192',
+  ref: 'ans_71528b9e-32c3-449c-a7f1-ca65caa08dca',
+  keyword: 'ans_6c0e74b5-7aaa-4023-8802-ab05f39f0b2a',
   answer: '👉 *PLAN_FULL* - Velocidad de hasta 15 Megas Simetricos- Compartido - $12.000',
   options: {
     media: null,
@@ -228,11 +196,11 @@
     keyword: {},
     callback: false
   },
-  refSerialize: 'e9e3af1c612574aa4974c77f519b1d0b'
+  refSerialize: 'bab8015d15183d43424299360a82c83c'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_943e88f1-9057-40c7-be98-0c32e6e8869a',
-  keyword: 'ans_2a83e933-16dd-4abd-9927-54021c119151',
+  ref: 'ans_c15db5a2-386e-40da-8a2d-80cfecc38cdd',
+  keyword: 'ans_71528b9e-32c3-449c-a7f1-ca65caa08dca',
   answer: '👉 *PLAN_FTTC_BASICO* - Conexion recomendada para 5 dispositivos simultaneos - $9.000',
   options: {
     media: null,
@@ -246,11 +214,11 @@
     keyword: {},
     callback: false
   },
-  refSerialize: '1db00b7642a5806cfe82e4adfc711315'
+  refSerialize: 'af0e9edd7a77e37f6e8ed653ee7512e6'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_440c1525-f7a5-497e-a94a-aa9327f156ed',
-  keyword: 'ans_943e88f1-9057-40c7-be98-0c32e6e8869a',
+  ref: 'ans_e1f564a1-011c-4b66-b9a9-dccde9393745',
+  keyword: 'ans_c15db5a2-386e-40da-8a2d-80cfecc38cdd',
   answer: '👉 *PLAN_FTTC_PREMIUM* - Conexion recomendada para MULTIPLES dispositivos  - $11.000',
   options: {
     media: null,
@@ -264,11 +232,11 @@
     keyword: {},
     callback: false
   },
-  refSerialize: '3c2ea78f9eff9360efdfc15c4e8e756f'
+  refSerialize: '3e3c4d262d9eab0838c2e928a16bf03d'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_12cacf45-78e2-4470-82a4-cb41069fb0e6',
-  keyword: 'ans_440c1525-f7a5-497e-a94a-aa9327f156ed',
+  ref: 'ans_a8b1732d-a052-46db-b4d5-abd120f3f9ae',
+  keyword: 'ans_e1f564a1-011c-4b66-b9a9-dccde9393745',
   answer: '👉 *PLAN_FTTC_FULL* - Conexion de hasta 20 Megas Simetricos - Compartidos - $13.000',
   options: {
     media: null,
@@ -282,11 +250,11 @@
     keyword: {},
     callback: false
   },
-  refSerialize: '775453416fc4cca06ea482c03ccf1437'
+  refSerialize: '0944651b1081becb57c7fab235bcf903'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_d06f8c89-6b23-404f-9132-00be2a2d7f09',
-  keyword: 'ans_12cacf45-78e2-4470-82a4-cb41069fb0e6',
+  ref: 'ans_0b754054-7465-4302-82ce-8da1bdbd58c9',
+  keyword: 'ans_a8b1732d-a052-46db-b4d5-abd120f3f9ae',
   answer: '💰 Costo de la instalacion $90.000',
   options: {
     media: null,
@@ -300,11 +268,11 @@
     keyword: {},
     callback: false
   },
-  refSerialize: 'dafdc4bf2a727dd6b812052bf900299c'
+  refSerialize: '59ba41b079533fb67d214ccce85829a1'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_0240fecb-e5c3-45dc-acf9-da358cdc3ac6',
-  keyword: 'ans_d06f8c89-6b23-404f-9132-00be2a2d7f09',
+  ref: 'ans_9b1d1e00-f870-4717-aefc-eb6a3420f566',
+  keyword: 'ans_0b754054-7465-4302-82ce-8da1bdbd58c9',
   answer: '*INCLUYE EN COMODATO*',
   options: {
     media: null,
@@ -318,11 +286,11 @@
     keyword: {},
     callback: false
   },
-  refSerialize: '7505f1ac3dfdc2bbb0a91085f78558c5'
+  refSerialize: 'd371257ed8268895a7e0f5d60a010fee'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_6eff02a7-ea4b-494c-a6d0-974056c326b1',
-  keyword: 'ans_0240fecb-e5c3-45dc-acf9-da358cdc3ac6',
+  ref: 'ans_a89be972-9c11-4265-afa9-0d18b030d020',
+  keyword: 'ans_9b1d1e00-f870-4717-aefc-eb6a3420f566',
   answer: '🧿 *IMPORTANTE*\n' +
     'Para corroborar la disponibilidad del servicio debe enviarnos las coordenadas de Google Maps al Whatsapp, solicitar hablar con un asesor\n' +
     'Se incluye acceso a Portal de Cliente',
@@ -338,11 +306,11 @@
     keyword: {},
     callback: false
   },
-  refSerialize: '23f1016bbf991fabb6f875a418498a7f'
+  refSerialize: '90772bbd45d656d54b260d62d6555ba1'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_33bf10ae-176e-4d8c-914e-b1089efd9050',
-  keyword: 'ans_6eff02a7-ea4b-494c-a6d0-974056c326b1',
+  ref: 'ans_d985d1d7-6e7e-4df0-a497-93ec21aa65fd',
+  keyword: 'ans_a89be972-9c11-4265-afa9-0d18b030d020',
   answer: 'Para continuar *esbriba el numero* de la opcion que necesita',
   options: {
     media: null,
@@ -356,29 +324,11 @@
     keyword: {},
     callback: false
   },
-  refSerialize: '4c3c4a0d4fbb9799e7573a29d6ad2cd7'
+  refSerialize: 'b6b3d7e99e213778d5566e48716925b3'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_541baf10-dd2f-493d-95af-57da3e2a5937',
-  keyword: 'ans_33bf10ae-176e-4d8c-914e-b1089efd9050',
-  answer: '1️⃣ *Portal de Cliente*',
-  options: {
-    media: null,
-    buttons: [],
-    capture: false,
-    child: null,
-    delay: 0,
-    idle: null,
-    ref: null,
-    nested: [],
-    keyword: {},
-    callback: false
-  },
-  refSerialize: 'f4c4d7f555c028441d3dce7ebf61baba'
-}
-[QUEUE_SE_ENVIO]:  {
-  ref: 'ans_2fb2c378-862f-486b-9f19-9cb61271ca0a',
-  keyword: 'ans_541baf10-dd2f-493d-95af-57da3e2a5937',
+  ref: 'ans_244f9473-db7d-4b22-a9e9-7241af788965',
+  keyword: 'ans_d985d1d7-6e7e-4df0-a497-93ec21aa65fd',
   answer: '0️⃣ *Volver al menu anterior*',
   options: {
     media: null,
@@ -392,16 +342,16 @@
     keyword: {},
     callback: true
   },
-  refSerialize: 'a8a2705994e531273ee6580c9538e92a'
+  refSerialize: '7530b2eaebf2e1a3ac4cd43e1d07ba8c'
 }
 [handleMsg]:  {
   key: {
     remoteJid: '5492634529314@s.whatsapp.net',
     fromMe: false,
-    id: '86D5785C63C96BB8077B9113F44740AB',
+    id: 'E29CEBD27EE4C9DBB4E3194E9CA9D6AF',
     participant: undefined
   },
-  messageTimestamp: 1712638498,
+  messageTimestamp: 1712639263,
   pushName: 'Canal de Atencion',
   broadcast: false,
   message: Message {
@@ -418,10 +368,10 @@
   key: {
     remoteJid: '5492634529314@s.whatsapp.net',
     fromMe: false,
-    id: 'ACF923559CBA4472ABC4494B1EDBC984',
+    id: '35F751C99203D6727CD1EE38345B0A47',
     participant: undefined
   },
-  messageTimestamp: 1712638578,
+  messageTimestamp: 1712639274,
   pushName: 'Canal de Atencion',
   broadcast: false,
   message: Message {
@@ -435,9 +385,9 @@
   from: '5492634529314'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_9f422862-f760-4647-a999-4ed19c986b2c',
-  keyword: 'key_9eaa9bec-1968-42c4-9aac-d7e42a68985b',
-  answer: ' Ingrese el DNI del titular *SIN PUNTO , NI ESPACIOS* \nEste en proceso',
+  ref: 'ans_ef88f839-38dc-4893-a71a-d70dee834084',
+  keyword: 'key_1ead2d38-c10c-4c49-946a-d5cf8edb8063',
+  answer: '🤖 Un asesor técnico se pondrá en contacto con ud dentro de nuestros horarios de atención: lunes a viernes 9Hs a 19hs. Muchas Gracias',
   options: {
     media: null,
     buttons: [],
@@ -450,25 +400,43 @@
     keyword: {},
     callback: false
   },
-  refSerialize: 'c4ebe4a352e56fc0993f38fac13c4792'
+  refSerialize: 'f26e4ea260a197aa32d7f1ad5382e6ff'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_df39612e-b97e-46fb-9d30-9bcd0b4eaaee',
+  keyword: 'ans_ef88f839-38dc-4893-a71a-d70dee834084',
+  answer: '0️⃣ *Volver al menu anterior*',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: '754ff325780afb27879644d9b542f628'
 }
 [handleMsg]:  {
   key: {
     remoteJid: '5492634529314@s.whatsapp.net',
     fromMe: false,
-    id: 'F1038EC6659AC8B14913D98DB9250E0C',
+    id: '82A470A6FD7A7B0DF145EBA427271018',
     participant: undefined
   },
-  messageTimestamp: 1712638590,
+  messageTimestamp: 1712639282,
   pushName: 'Canal de Atencion',
   broadcast: false,
   message: Message {
-    conversation: '27698286',
+    conversation: '0',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2
     }
   },
-  body: '27698286',
+  body: '0',
   from: '5492634529314'
 }

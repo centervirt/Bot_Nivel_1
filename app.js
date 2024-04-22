@@ -7,6 +7,45 @@ const BaileysProvider = require('@bot-whatsapp/provider/baileys')
 const MockAdapter = require('@bot-whatsapp/database/mock')
 
 
+/**
+ * 
+ * 
+ */
+
+const menuAPI = async (cedula) => {
+    try {
+      const token = process.env.MIKRO_API // Obtiene el token de autenticación de las variables de entorno
+      if (!token) {
+        throw new Error('Token de autenticación no encontrado en las variables de entorno.');
+      }
+  
+      const response = await axios.post('https://intertel.online/api/v1/GetClientsDetails', {
+        cedula: cedula
+      }, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        }
+      });
+  
+      console.log('Status:', response.status);
+      console.log('Data:', response.data);
+  
+      // Aquí puedes procesar la respuesta y preparar el mensaje para enviar a WhatsApp
+      const cliente = response.data.datos[0]; // Suponiendo que la respuesta contiene un solo cliente
+      const mensaje = `Cliente encontrado:\nNombre: ${cliente.nombre},\nEstado: ${cliente.estado},\nCorreo: ${cliente.correo}`;
+  
+      return mensaje; // Devuelve el mensaje para enviar a WhatsApp
+  
+    } catch (error) {
+      console.error('Error:', error.message);
+      return 'Ocurrió un error al buscar el cliente.'; // En caso de error, devuelve un mensaje de error
+    }
+  };
+  
+
+/////////////Costos de conexiones  y planes de servicio /////////////////////
+
 const flowCostos = addKeyword('1')
 
         .addAnswer('👉 *PLAN_BASICO* - Conexion recomendada para 3 dispositivos simultaneos - $8.000 x mes')
@@ -25,14 +64,14 @@ const flowCostos = addKeyword('1')
                     'Se incluye acceso a Portal de Cliente',
                 ])
         .addAnswer ('Para continuar *esbriba el numero* de la opcion que necesita')
-        .addAnswer('1️⃣ *Portal de Cliente*')
+    // .addAnswer('1️⃣ *Portal de Cliente*')
         .addAnswer('0️⃣ *Volver al menu anterior*',
 
                         {capture: true},
                         async (ctx, {gotoFlow}) => {
                             const body = ctx.body;
                             if (body === "0") 
-                            return gotoFlow(flowComienzo)
+                            return gotoFlow(flowInformacion)
                     }
                          )
 
@@ -57,6 +96,9 @@ const flowSolicitarServicio = addKeyword('3')
 .addAnswer('0️⃣ *Para cancelar y ver el menu nuevamente*')
 .addAnswer('1️⃣ *Para continuar')
 
+
+
+
 const flowCliente = addKeyword('2')
     .addAnswer(
     [
@@ -76,11 +118,22 @@ const flowInformacion = addKeyword('1')
             '1️⃣ *Costo de conexion y planes*',
             '2️⃣ *Hablar con un asesor*',
             '3️⃣ *Solicitar Servicio* ',
-            '0️⃣ *Volver el Menu Anterior*'
+            '0️⃣ *Volver el Menu Principal*'
         ],
-        null,
-        null,
+        {capture: true},
+            async, (ctx, { gotoFlow }) => {
+            const body = ctx.body;
+            if (body === "0") return gotoFlow(flowComienzo)
+         //   if (body === "1") return gotoFlow(flowCostos);
+         //   if (body === "2") return gotoFlow(flowAsesor);
+         //   if (body === "3") return gotoFlow(flowSolicitarServicio);
+        },
+        
+         
         [flowCostos, flowSolicitarServicio, flowAsesor])
+
+     
+
 
 
 const flowComienzo = addKeyword('UBNT', '0', { sensitive: true })
